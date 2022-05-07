@@ -1,0 +1,60 @@
+{
+  "name": "file-upload",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint:script": "vue-cli-service lint src --no-fix --max-warnings 0",
+    "lint:script:fix": "vue-cli-service lint src --fix",
+    "lint:style": "stylelint \"**/*.{vue,less,postcss,css,scss}\" --no-fix --max-warnings 0",
+    "lint:style:fix": "stylelint \"**/*.{vue,less,postcss,css,scss}\" --fix",
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,tsx,ts}": [
+      "npm run prettier",
+      "npm run lint:script",
+      "git add ."
+    ],
+    "**/*.{css,scss,less,styl}": [
+      "npm run prettier",
+      "npm run lint:style",
+      "git add ."
+    ],
+    "**/*.vue": [
+      "npm run prettier",
+      "npm run lint:script",
+      "npm run lint:style",
+      "git add ."
+    ]
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.17",
+    "@vue/cli-plugin-eslint": "~4.5.17",
+    "@vue/cli-plugin-router": "~4.5.17",
+    "@vue/cli-service": "~4.5.17",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-huaer": "^1.0.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "husky": "^7.0.0",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^5.0.0",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
